@@ -4,8 +4,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "devops-terraform-state-bucket"
-    key            = "ec2/terraform.tfstate"
+    bucket         = "devops-terraform-techlearn182"
+    key            = "devops/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "terraform-locks"
   }
