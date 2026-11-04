@@ -9,3 +9,17 @@ resource "aws_instance" "jenkins_server" {
     Owner       = "Silambu"
   }
 }
+
+
+#tomcat server
+resource "aws_instance" "tomcat_server" {
+  ami           = "ami-0f19324397f53458f"
+  instance_type = "t3.micro"
+  key_name      = "sshkey-si"
+
+  tags = {
+    Name        = "tomcat_server"
+    Environment = "Dev"
+    Owner       = "Silambu"
+  }
+}
