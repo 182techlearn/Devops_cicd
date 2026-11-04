@@ -23,3 +23,16 @@ resource "aws_instance" "tomcat_server" {
     Owner       = "Silambu"
   }
 }
+
+#docker server
+resource "aws_instance" "docker_server" {
+  ami           = "ami-0f19324397f53458f"
+  instance_type = "t3.micro"
+  key_name      = "sshkey-si"
+
+  tags = {
+    Name        = "docker_server"
+    Environment = "Dev"
+    Owner       = "Silambu"
+  }
+}
