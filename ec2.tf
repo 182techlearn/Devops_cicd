@@ -36,3 +36,18 @@ resource "aws_instance" "docker_server" {
     Owner       = "Silambu"
   }
 }
+
+
+
+#Ansible server
+resource "aws_instance" "ansible_server" {
+  ami           = "ami-05fbd65e334e88c16"
+  instance_type = "t3.micro"
+  key_name      = "sshkey-si"
+
+  tags = {
+    Name        = "ansible_server"
+    Environment = "Dev"
+    Owner       = "Silambu"
+  }
+}
