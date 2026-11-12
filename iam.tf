@@ -1,4 +1,4 @@
-resource "aws_iam_role" "eks_admin_role" {
+resource "aws_iam_role" "eks_admin_role1" {
   name = "eks-admin-role"
 
   assume_role_policy = jsonencode({
@@ -12,11 +12,11 @@ resource "aws_iam_role" "eks_admin_role" {
     }]
   })
 }
-resource "aws_iam_role_policy_attachment" "admin" {
-  role       = aws_iam_role.eks_admin_role.name
+resource "aws_iam_role_policy_attachment" "admin1" {
+  role       = aws_iam_role.eks_admin_roleq.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
-resource "aws_iam_instance_profile" "eks_admin_profile" {
-  name = "eks-admin-profile"
-  role = aws_iam_role.eks_admin_role.name
+resource "aws_iam_instance_profile" "eks_admin_profile1" {
+  name = "eks-admin-profile1"
+  role = aws_iam_role.eks_admin_role1.name
 }
